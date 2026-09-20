@@ -63,6 +63,18 @@
     }
   }
 
+  /* ---------- smooth scroll without changing the URL ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var targetId = link.getAttribute("href").slice(1);
+      var target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
   /* ---------- fullscreen menu ---------- */
   var menuBtn = document.getElementById("menuBtn");
   var closeMenu = document.getElementById("closeMenu");
