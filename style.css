@@ -257,37 +257,6 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
 }
 @keyframes pulse{ 0%,100%{ opacity:1; transform:scale(1);} 50%{ opacity:.45; transform:scale(1.3);} }
 
-.stats-wrap{
-  position:relative;
-  margin-top:90px;
-  max-width:640px;
-}
-
-.stats-line{
-  position:absolute;
-  left:0; top:-46px;
-  width:100%; height:90px;
-  z-index:0;
-}
-
-#statsLine{
-  stroke-dasharray:520;
-  stroke-dashoffset:520;
-}
-#statsLine.drawn{
-  animation:drawLine 1.6s ease-out .4s forwards;
-}
-@keyframes drawLine{ to{ stroke-dashoffset:0; } }
-
-.stats-row{
-  position:relative;
-  z-index:1;
-  display:flex;
-  justify-content:space-between;
-  text-align:center;
-}
-.stat h2{ font-size:clamp(30px,4vw,44px); }
-.stat p{ color:var(--ink-soft); font-size:13px; margin-top:6px; }
 
 /* ---------- fade up on load ---------- */
 .fu{ opacity:0; animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) forwards; }
@@ -402,5 +371,4 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
   .skill-row{ flex-direction:column; align-items:flex-start; }
   .exp-date, .edu-date{ margin-top:8px; }
   .skill-label{ flex:none; }
-  .stats-line{ display:none; }
 }

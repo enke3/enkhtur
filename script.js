@@ -75,25 +75,4 @@
       el.classList.add("in-view");
     });
   }
-
-  /* ---------- draw the hero stats connector once it's visible ---------- */
-  var statsLine = document.getElementById("statsLine");
-  if (statsLine) {
-    if ("IntersectionObserver" in window) {
-      var lineIo = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              statsLine.classList.add("drawn");
-              lineIo.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-      lineIo.observe(statsLine);
-    } else {
-      statsLine.classList.add("drawn");
-    }
-  }
 })();
