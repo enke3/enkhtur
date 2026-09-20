@@ -75,4 +75,80 @@
       el.classList.add("in-view");
     });
   }
+
+  /* ---------- project detail modal ---------- */
+  var modalOverlay = document.getElementById("projectModal");
+  if (modalOverlay) {
+    var modalThumb = document.getElementById("modalThumb");
+    var modalTitle = document.getElementById("modalTitle");
+    var modalDesc = document.getElementById("modalDesc");
+    var modalChips = document.getElementById("modalChips");
+    var modalLink = document.getElementById("modalLink");
+    var modalCloseBtn = document.getElementById("modalClose");
+    var projectCards = document.querySelectorAll(".project-card[data-project]");
+    var lastFocused = null;
+
+    function openProjectModal(card) {
+      var titleEl = card.querySelector("h3");
+      var fullDesc = card.querySelector(".full-desc");
+      var thumb = card.querySelector(".thumb-inner");
+      var chips = card.querySelector(".chip-row");
+      var link = card.getAttribute("data-link");
+
+      modalTitle.textContent = titleEl ? titleEl.textContent : "";
+      modalDesc.innerHTML = fullDesc ? fullDesc.innerHTML : "";
+      modalChips.innerHTML = chips ? chips.innerHTML : "";
+      modalThumb.innerHTML = "";
+      if (thumb) {
+        modalThumb.appendChild(thumb.cloneNode(true));
+      }
+
+      if (link) {
+        modalLink.href = link;
+        modalLink.style.display = "inline-block";
+      } else {
+        modalLink.style.display = "none";
+        modalLink.removeAttribute("href");
+      }
+
+      lastFocused = document.activeElement;
+      modalOverlay.classList.add("open");
+      modalOverlay.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      modalCloseBtn.focus();
+    }
+
+    function closeProjectModal() {
+      modalOverlay.classList.remove("open");
+      modalOverlay.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      if (lastFocused && typeof lastFocused.focus === "function") {
+        lastFocused.focus();
+      }
+    }
+
+    projectCards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        openProjectModal(card);
+      });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openProjectModal(card);
+        }
+      });
+    });
+
+    modalCloseBtn.addEventListener("click", closeProjectModal);
+    modalOverlay.addEventListener("click", function (e) {
+      if (e.target === modalOverlay) {
+        closeProjectModal();
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modalOverlay.classList.contains("open")) {
+        closeProjectModal();
+      }
+    });
+  }
 })();
