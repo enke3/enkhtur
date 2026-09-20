@@ -27,20 +27,31 @@
     function fireShootingStar() {
       var star = document.createElement("span");
       star.className = "shooting-star";
-      star.style.top = (Math.random() * 40) + "%";
-      star.style.left = (30 + Math.random() * 60) + "%";
+      star.style.top = (Math.random() * 35) + "%";
+      star.style.left = (15 + Math.random() * 70) + "%";
+
+      // a fixed angle set once, never animated, so the streak always
+      // travels in a dead-straight line instead of curving
+      var angle = 155 + Math.random() * 30; // roughly upper-right to lower-left
+      star.style.transform = "rotate(" + angle + "deg)";
+
+      var core = document.createElement("span");
+      core.className = "shooting-star-core";
+      star.appendChild(core);
+
       shootingLayer.appendChild(star);
+
       // trigger the animation on the next frame so it actually runs
       requestAnimationFrame(function () {
         star.classList.add("run");
       });
-      star.addEventListener("animationend", function () {
+      core.addEventListener("animationend", function () {
         star.remove();
       });
     }
 
     function scheduleShootingStar() {
-      var delay = 4000 + Math.random() * 7000;
+      var delay = 5000 + Math.random() * 8000;
       window.setTimeout(function () {
         fireShootingStar();
         scheduleShootingStar();
