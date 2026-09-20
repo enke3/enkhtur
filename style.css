@@ -434,6 +434,17 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
 .cal-cell{ aspect-ratio:1; border-radius:3px; background:var(--line); }
 .cal-cell.accent{ background:var(--accent); }
 
+/* Moneyport thumbnail: exchange chart */
+.chart-bars{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:12px;
+  height:100%;
+}
+.chart-bar{ width:16px; border-radius:3px 3px 0 0; background:var(--line); }
+.chart-bar.accent{ background:var(--accent); opacity:.75; }
+
 .project-body{ padding:28px 36px 32px; }
 .project-head{ display:flex; align-items:baseline; gap:14px; }
 .project-num{ font-size:15px; font-weight:700; }
