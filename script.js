@@ -1,6 +1,57 @@
 (function () {
   "use strict";
 
+  /* ---------- cursor-following glow ---------- */
+  var glow = document.getElementById("cursorGlow");
+  if (glow && window.matchMedia && window.matchMedia("(pointer: fine)").matches) {
+    var glowTicking = false;
+    document.addEventListener("mousemove", function (e) {
+      glow.classList.add("active");
+      if (!glowTicking) {
+        window.requestAnimationFrame(function () {
+          glow.style.setProperty("--gx", e.clientX + "px");
+          glow.style.setProperty("--gy", e.clientY + "px");
+          glowTicking = false;
+        });
+        glowTicking = true;
+      }
+    });
+    document.addEventListener("mouseleave", function () {
+      glow.classList.remove("active");
+    });
+  }
+
+  /* ---------- shooting stars ---------- */
+  var shootingLayer = document.getElementById("shootingStars");
+  if (shootingLayer) {
+    function fireShootingStar() {
+      var star = document.createElement("span");
+      star.className = "shooting-star";
+      star.style.top = (Math.random() * 40) + "%";
+      star.style.left = (30 + Math.random() * 60) + "%";
+      shootingLayer.appendChild(star);
+      // trigger the animation on the next frame so it actually runs
+      requestAnimationFrame(function () {
+        star.classList.add("run");
+      });
+      star.addEventListener("animationend", function () {
+        star.remove();
+      });
+    }
+
+    function scheduleShootingStar() {
+      var delay = 4000 + Math.random() * 7000;
+      window.setTimeout(function () {
+        fireShootingStar();
+        scheduleShootingStar();
+      }, delay);
+    }
+
+    if (!window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scheduleShootingStar();
+    }
+  }
+
   /* ---------- fullscreen menu ---------- */
   var menuBtn = document.getElementById("menuBtn");
   var closeMenu = document.getElementById("closeMenu");

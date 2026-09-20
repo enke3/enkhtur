@@ -57,6 +57,77 @@ button{ font-family:inherit; }
 }
 @keyframes driftStars{ from{ background-position:0 0; } to{ background-position:-340px 260px; } }
 
+/* second star layer, offset pattern, fades in and out for a twinkle effect */
+.stars-twinkle{
+  background-image:
+    radial-gradient(1.4px 1.4px at 70px 30px, rgba(140,255,107,.55), transparent),
+    radial-gradient(1.2px 1.2px at 210px 110px, rgba(237,237,237,.45), transparent),
+    radial-gradient(1.6px 1.6px at 260px 200px, rgba(237,237,237,.4), transparent),
+    radial-gradient(1.2px 1.2px at 120px 230px, rgba(140,255,107,.4), transparent),
+    radial-gradient(1.4px 1.4px at 20px 190px, rgba(237,237,237,.35), transparent);
+  background-size:300px 240px;
+  animation: driftStars 80s linear infinite reverse, twinkle 4.5s ease-in-out infinite;
+  opacity:.5;
+}
+@keyframes twinkle{ 0%,100%{ opacity:.15; } 50%{ opacity:.75; } }
+
+/* cursor-following glow */
+.cursor-glow{
+  position:fixed;
+  top:0; left:0;
+  width:520px; height:520px;
+  margin-left:-260px; margin-top:-260px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(140,255,107,.10) 0%, rgba(140,255,107,0) 70%);
+  pointer-events:none;
+  z-index:2;
+  transform:translate(var(--gx, 50vw), var(--gy, 40vh));
+  transition:opacity .4s ease;
+  opacity:0;
+}
+.cursor-glow.active{ opacity:1; }
+
+/* shooting stars */
+.shooting-stars{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+}
+.shooting-star{
+  position:absolute;
+  top:0; left:0;
+  width:2px;
+  height:2px;
+  background:#EDEDED;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(237,237,237,.1);
+  opacity:0;
+}
+.shooting-star::before{
+  content:'';
+  position:absolute;
+  top:50%; right:0;
+  width:120px;
+  height:1px;
+  background:linear-gradient(90deg, rgba(237,237,237,.9), rgba(237,237,237,0));
+  transform:translateY(-50%);
+}
+.shooting-star.run{
+  animation:shootAcross 1.4s cubic-bezier(.3,.6,.2,1) forwards;
+}
+@keyframes shootAcross{
+  0%{ opacity:0; transform:translate(0,0) rotate(215deg); }
+  8%{ opacity:1; }
+  80%{ opacity:1; }
+  100%{ opacity:0; transform:translate(-420px,300px) rotate(215deg); }
+}
+
+@media (max-width:760px){
+  .cursor-glow{ display:none; }
+}
+
 /* ---------- layout helpers ---------- */
 main, header, .menu-overlay{ position:relative; z-index:1; }
 
