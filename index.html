@@ -330,6 +330,70 @@
         </div>
       </div>
 
+      <div class="card project-card reveal" data-project="ourarchive" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-thumb">
+          <div class="thumb-inner thumb-archive">
+            <div class="tree-row">
+              <span class="tree-node"></span>
+            </div>
+            <div class="tree-row">
+              <span class="tree-node accent"></span>
+              <span class="tree-node"></span>
+            </div>
+            <div class="tree-row">
+              <span class="tree-node small"></span>
+              <span class="tree-node small accent"></span>
+              <span class="tree-node small"></span>
+              <span class="tree-node small"></span>
+            </div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="accent-text project-num">_05.</span>
+            <h3>Our Archive</h3>
+          </div>
+          <p class="project-teaser">A family memory platform that finds what's missing from your family's history and asks the right person to fill it in.</p>
+          <div class="chip-row">
+            <span class="chip">Next.js</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">pgvector</span>
+            <span class="chip">OpenAI</span>
+          </div>
+          <span class="project-more">View project <span aria-hidden="true">&rarr;</span></span>
+          <div class="full-desc" hidden>
+            <p>
+              A family memory platform I built to solve a problem I've had since I was a kid: I was always
+              curious about my grandparents and great grandparents, and the answers I got were vague at best.
+              Most family history just lives in a few people's heads and disappears when they do.
+            </p>
+            <p>
+              Family members create a shared, private space and add memories in whatever format is easiest,
+              photos with captions, voice recordings that transcribe themselves automatically, written
+              stories, or documents. Everything lands in one living archive tagged with who contributed it
+              and when. The core feature is a chat interface built on retrieval augmented generation: you ask
+              the archive a question in plain language, like what someone's first job was, and it searches
+              the family's actual stored memories, answers using only what it finds, and cites the specific
+              memory behind every claim. It's retrieval over what people really said, never a simulation of
+              anyone.
+            </p>
+            <p>
+              The part I'm proudest of is the gap detection system. Most personal archive projects die within
+              a week because they depend on someone remembering to contribute, so this one doesn't wait. It
+              actively scans what's already been recorded, notices what's missing, whether that's a person
+              with almost no memories or a whole decade with nothing documented, and generates a specific
+              question for the right family member to answer. Every member shows up automatically on a visual
+              family tree, and every memory is plotted on an interactive timeline so you can see at a glance
+              where the archive is well covered and where it isn't. Built on Next.js and TypeScript, with
+              Supabase handling the database, file storage, and auth, and pgvector doing the vector search
+              that powers retrieval. OpenAI handles the grounded answers, voice transcription through Whisper,
+              and the embeddings, and every family's data is isolated at the database level with row level
+              security, so families genuinely cannot see each other's memories.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div class="mini-grid">
         <div class="card mini-card reveal">
           <h4>Automated Content Pipeline</h4>

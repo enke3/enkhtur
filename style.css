@@ -445,6 +445,13 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
 .chart-bar{ width:16px; border-radius:3px 3px 0 0; background:var(--line); }
 .chart-bar.accent{ background:var(--accent); opacity:.75; }
 
+/* Our Archive thumbnail: family tree nodes */
+.thumb-archive{ gap:14px; }
+.tree-row{ display:flex; justify-content:center; gap:16px; }
+.tree-node{ width:22px; height:22px; border-radius:50%; background:var(--line); }
+.tree-node.accent{ background:var(--accent); opacity:.75; }
+.tree-node.small{ width:14px; height:14px; }
+
 .project-body{ padding:28px 36px 32px; }
 .project-head{ display:flex; align-items:baseline; gap:14px; }
 .project-num{ font-size:15px; font-weight:700; }
