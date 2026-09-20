@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enkhee Enkhbat — Portfolio</title>
+<meta name="description" content="Software & AI engineer. Co-founder of Moneyport. Builder of Caplora, Хичээл+, and BooklyMN.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars" aria-hidden="true"></div>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <a href="#hero" class="logo">ENKHEE<span class="accent-text">.</span></a>
+  <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- FULLSCREEN MENU -->
+<div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="eyebrow">Menu</span>
+      <button id="closeMenu" class="close-btn" aria-label="Close menu">&times;</button>
+    </div>
+
+    <nav class="menu-links">
+      <a class="navlink-row" href="#hero" data-delay="0"><span class="dot dot-yellow"></span><span class="navlink-text">Home</span></a>
+      <a class="navlink-row" href="#about" data-delay="1"><span class="dot dot-blue"></span><span class="navlink-text">About Me</span></a>
+      <a class="navlink-row" href="#experience" data-delay="2"><span class="dot dot-accent"></span><span class="navlink-text">Experience</span></a>
+      <a class="navlink-row" href="#projects" data-delay="3"><span class="dot dot-purple"></span><span class="navlink-text">Projects</span></a>
+      <a class="navlink-row" href="#skills" data-delay="4"><span class="dot dot-yellow"></span><span class="navlink-text">Skills</span></a>
+      <a class="navlink-row navlink-last" href="#education" data-delay="5"><span class="dot dot-blue"></span><span class="navlink-text">Education</span></a>
+    </nav>
+
+    <div class="menu-contact" data-delay="6">
+      <span class="eyebrow">Get in touch</span>
+      <a href="mailto:enkhturenkhbat37@gmail.com" class="menu-email">enkhturenkhbat37@gmail.com</a>
+      <p class="menu-location">Sydney, Australia</p>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <p class="fu eyebrow" style="animation-delay:.05s">Software &amp; AI engineer</p>
+
+    <h1 class="fu hero-word accent-text" style="animation-delay:.15s">BUILDER</h1>
+    <h1 class="fu hero-word" style="animation-delay:.28s">&amp; ENGINEER</h1>
+
+    <p class="fu hero-copy" style="animation-delay:.42s">
+      Hi, I'm Enkhee. I started in business and finance and moved into computing, and now I build
+      products end to end, from the business case to the backend that runs it, across fintech,
+      classroom tools, and booking platforms.
+    </p>
+
+    <div class="fu hero-cta" style="animation-delay:.55s">
+      <a class="btn-hard" href="mailto:enkhturenkhbat37@gmail.com">Let's talk</a>
+      <div class="status-row">
+        <span class="dot-pulse"></span>
+        <span class="status-text">Open to new opportunities</span>
+      </div>
+    </div>
+
+    <div class="fu stats-wrap" style="animation-delay:.65s">
+      <svg class="stats-line" viewBox="0 0 600 90" preserveAspectRatio="none">
+        <polyline id="statsLine" points="60,4 300,80 540,4" fill="none" stroke="#2b2b2b" stroke-width="1.5"/>
+      </svg>
+      <div class="stats-row">
+        <div class="stat">
+          <h2 class="accent-text">4</h2>
+          <p>Products shipped</p>
+        </div>
+        <div class="stat">
+          <h2 class="accent-text">9</h2>
+          <p>Agency clients, year one</p>
+        </div>
+        <div class="stat">
+          <h2 class="accent-text">3</h2>
+          <p>Languages spoken</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <span class="eyebrow reveal">This is me</span>
+    <h2 class="section-title reveal">Hi, I'm Enkhee.</h2>
+    <p class="body-copy reveal">
+      My background is business and finance. I studied it at NYU Shanghai, then moved to Sydney and
+      taught myself my way into computing at the University of Sydney. I've run a digital agency,
+      started a non-profit connecting students to internships, and co-founded a fintech company.
+    </p>
+    <p class="body-copy reveal">
+      What I keep coming back to is the part where a business idea turns into something real people
+      can use. I like being the person who can do both halves of that: figure out why it should
+      exist, and build it.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <span class="eyebrow reveal">My experience</span>
+
+    <div class="exp-list">
+      <div class="exp-row reveal">
+        <div>
+          <div class="exp-meta"><span class="dot dot-accent"></span><span class="exp-company">Moneyport</span></div>
+          <h3 class="exp-title">Co-Founder &amp; CTO</h3>
+          <p class="exp-copy">
+            Co-founded a peer-to-peer currency exchange platform built to eliminate scam risk. Designed
+            the schema, built the backend in Python and PostgreSQL, containerised it with Docker, and
+            deployed via CI/CD. Wrote the technical specs and reviewed every release against them.
+          </p>
+        </div>
+        <span class="exp-date">Present</span>
+      </div>
+
+      <div class="exp-row reveal">
+        <div>
+          <div class="exp-meta"><span class="dot dot-yellow"></span><span class="exp-company">Next Social Platform</span></div>
+          <h3 class="exp-title">Software &amp; Product Intern</h3>
+          <p class="exp-copy">
+            Designed the ERDs for a classroom management app, then built the backend in TypeScript and
+            integrated it with MongolNet over REST, with token-based auth across student, teacher, and
+            admin roles. This became the foundation for Хичээл+ below.
+          </p>
+        </div>
+        <span class="exp-date">2026</span>
+      </div>
+
+      <div class="exp-row reveal">
+        <div>
+          <div class="exp-meta"><span class="dot dot-blue"></span><span class="exp-company">Education Globally (UK)</span></div>
+          <h3 class="exp-title">Business Manager &amp; Developer</h3>
+          <p class="exp-copy">
+            Built and launched client websites and wrote SOPs detailed enough for new staff to work
+            unsupervised. Produced client-facing documents and web copy to a consistent style.
+          </p>
+        </div>
+        <span class="exp-date">2024</span>
+      </div>
+
+      <div class="exp-row exp-row-last reveal">
+        <div>
+          <div class="exp-meta"><span class="dot dot-purple"></span><span class="exp-company">GrowthCreek LLC (NYC)</span></div>
+          <h3 class="exp-title">Junior Management Associate</h3>
+          <p class="exp-copy">
+            Worked in financial analysis and business development, contributing to high-impact projects
+            while gaining industry insight, and supported daily operations with research and data.
+          </p>
+        </div>
+        <span class="exp-date">2023</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <span class="eyebrow reveal">Selected projects</span>
+
+    <div class="project-list">
+
+      <div class="card project-card reveal">
+        <div class="project-head">
+          <span class="accent-text project-num">_01.</span>
+          <h3>Caplora</h3>
+        </div>
+        <p class="body-copy">
+          A production-readiness platform for software built with AI coding tools. It catches the gap
+          between "it works" and "it's ready for users": exposed secrets, missing authentication,
+          unsafe database access, rate limits. I built the scanning engine, caplora-cli, using static
+          analysis rather than asking an LLM to guess, every finding backed by evidence. For issues it
+          can safely fix, it writes the patch, opens a pull request, and re-runs the check to confirm.
+        </p>
+        <div class="chip-row">
+          <span class="chip">TypeScript</span>
+          <span class="chip">Static analysis</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">GitHub API</span>
+        </div>
+      </div>
+
+      <div class="card project-card reveal">
+        <div class="project-head">
+          <span class="accent-text project-num">_02.</span>
+          <h3>Хичээл+</h3>
+        </div>
+        <p class="body-copy">
+          A classroom management mini-app integrated into MongolNet, a Mongolian super-app modeled on
+          WeChat. Teachers post homework into class group chats, students submit work without leaving
+          the conversation, and parents get automatic updates. Built platform-agnostic from day one
+          with a mapping-table pattern, full Expo/React Native and Fastify/Drizzle/PostgreSQL stack,
+          Redis for jobs, and a CI/CD pipeline running 29 unit and 11 end-to-end tests before every
+          deploy. Deployed on AWS, handling MongolNet's real authentication flow.
+        </p>
+        <div class="chip-row">
+          <span class="chip">React Native</span>
+          <span class="chip">Fastify</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Redis</span>
+          <span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <div class="card project-card reveal">
+        <div class="project-head">
+          <span class="accent-text project-num">_03.</span>
+          <h3>BooklyMN</h3>
+        </div>
+        <p class="body-copy">
+          A full-stack booking platform for the Mongolian market. Barbershops, salons, spas, and
+          restaurants get their own booking page so customers can book around the clock. Covers a
+          real-time booking flow, an owner dashboard, a super admin panel, two-way Google Calendar
+          sync, a QR code and Instagram card generator, automated Twilio SMS reminders, and a fully
+          Mongolian UI. Runs as a managed SaaS, live at booklymn.org.
+        </p>
+        <div class="chip-row">
+          <span class="chip">Next.js</span>
+          <span class="chip">Supabase</span>
+          <span class="chip">Twilio</span>
+          <span class="chip">Google Calendar API</span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="card mini-card reveal">
+          <h4>Automated Content Pipeline</h4>
+          <p>n8n, ChatGPT, and ElevenLabs strung into one pipeline for scripts and voiceovers.</p>
+        </div>
+        <div class="card mini-card reveal">
+          <h4>InternLink</h4>
+          <p>Connected students to internships through four bank and hospital partnerships.</p>
+        </div>
+        <div class="card mini-card reveal">
+          <h4>Digital Agency</h4>
+          <p>Websites and resources for early-stage founders. Nine clients in year one.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <span class="eyebrow reveal">My stack</span>
+
+    <div class="skills-list">
+
+      <div class="skill-row reveal">
+        <h3 class="skill-label">LANGUAGES &amp; CODE</h3>
+        <div class="chip-row chip-row-wrap">
+          <span class="chip chip-lg">Python</span>
+          <span class="chip chip-lg">TypeScript / JavaScript</span>
+          <span class="chip chip-lg">Java</span>
+          <span class="chip chip-lg">SQL</span>
+          <span class="chip chip-lg">HTML &amp; CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-row reveal">
+        <h3 class="skill-label">FRONTEND</h3>
+        <div class="chip-row chip-row-wrap">
+          <span class="chip chip-lg">Next.js</span>
+          <span class="chip chip-lg">React</span>
+          <span class="chip chip-lg">React Native / Expo</span>
+          <span class="chip chip-lg">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-row reveal">
+        <h3 class="skill-label">BACKEND &amp; DATA</h3>
+        <div class="chip-row chip-row-wrap">
+          <span class="chip chip-lg">Fastify / Node</span>
+          <span class="chip chip-lg">PostgreSQL</span>
+          <span class="chip chip-lg">Drizzle ORM</span>
+          <span class="chip chip-lg">Redis</span>
+          <span class="chip chip-lg">Supabase</span>
+        </div>
+      </div>
+
+      <div class="skill-row reveal">
+        <h3 class="skill-label">INFRA &amp; TOOLS</h3>
+        <div class="chip-row chip-row-wrap">
+          <span class="chip chip-lg">Docker</span>
+          <span class="chip chip-lg">CI/CD (GitHub Actions)</span>
+          <span class="chip chip-lg">AWS</span>
+          <span class="chip chip-lg">Railway / Vercel</span>
+          <span class="chip chip-lg">n8n</span>
+          <span class="chip chip-lg">Twilio</span>
+          <span class="chip chip-lg">ElevenLabs</span>
+        </div>
+      </div>
+
+      <div class="skill-row reveal">
+        <h3 class="skill-label">ALSO</h3>
+        <div class="chip-row chip-row-wrap">
+          <span class="chip chip-lg">Agentic AI</span>
+          <span class="chip chip-lg">Prompt engineering</span>
+          <span class="chip chip-lg">UI/UX design</span>
+          <span class="chip chip-lg">Requirements &amp; SOP writing</span>
+          <span class="chip chip-lg">Spreadsheets &amp; data checking</span>
+          <span class="chip chip-lg">English — Fluent</span>
+          <span class="chip chip-lg">Mongolian — Fluent</span>
+          <span class="chip chip-lg">Chinese — Intermediate</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <span class="eyebrow reveal">Education</span>
+
+    <div class="edu-list">
+      <div class="edu-row reveal">
+        <div>
+          <h3>Bachelor of Advanced Computing</h3>
+          <p>University of Sydney</p>
+        </div>
+        <span class="edu-date">2026–2028</span>
+      </div>
+      <div class="edu-row reveal">
+        <div>
+          <h3>Business &amp; Finance Coursework</h3>
+          <p>New York University (Shanghai)</p>
+        </div>
+        <span class="edu-date">2025</span>
+      </div>
+      <div class="edu-row edu-row-last reveal">
+        <div>
+          <h3>Highschool Diploma</h3>
+          <p>American School of Ulaanbaatar</p>
+        </div>
+        <span class="edu-date">2021–2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <section id="contact" class="section">
+    <span class="eyebrow reveal">Get in touch</span>
+    <h2 class="contact-title reveal">LET'S BUILD<br>SOMETHING.</h2>
+    <a class="btn-hard contact-btn reveal" href="mailto:enkhturenkhbat37@gmail.com">enkhturenkhbat37@gmail.com</a>
+
+    <div class="footer-row">
+      <span>Enkhee Enkhbat</span>
+      <span>Sydney, Australia</span>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
