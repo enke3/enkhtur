@@ -47,6 +47,20 @@
   </div>
 </div>
 
+<!-- PROJECT DETAIL MODAL -->
+<div id="projectModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="modalClose" class="close-btn modal-close" aria-label="Close">&times;</button>
+    <div id="modalThumb" class="modal-thumb" aria-hidden="true"></div>
+    <div class="modal-body">
+      <h3 id="modalTitle"></h3>
+      <div id="modalDesc" class="modal-desc"></div>
+      <div id="modalChips" class="chip-row"></div>
+      <a id="modalLink" class="btn-hard modal-link" target="_blank" rel="noopener" style="display:none">Visit site</a>
+    </div>
+  </div>
+</div>
+
 <main>
 
   <!-- HERO -->
@@ -67,26 +81,6 @@
       <div class="status-row">
         <span class="dot-pulse"></span>
         <span class="status-text">Open to new opportunities</span>
-      </div>
-    </div>
-
-    <div class="fu stats-wrap" style="animation-delay:.65s">
-      <svg class="stats-line" viewBox="0 0 600 90" preserveAspectRatio="none">
-        <polyline id="statsLine" points="60,4 300,80 540,4" fill="none" stroke="#2b2b2b" stroke-width="1.5"/>
-      </svg>
-      <div class="stats-row">
-        <div class="stat">
-          <h2 class="accent-text">4</h2>
-          <p>Products shipped</p>
-        </div>
-        <div class="stat">
-          <h2 class="accent-text">9</h2>
-          <p>Agency clients, year one</p>
-        </div>
-        <div class="stat">
-          <h2 class="accent-text">3</h2>
-          <p>Languages spoken</p>
-        </div>
       </div>
     </div>
   </section>
@@ -170,65 +164,124 @@
 
     <div class="project-list">
 
-      <div class="card project-card reveal">
-        <div class="project-head">
-          <span class="accent-text project-num">_01.</span>
-          <h3>Caplora</h3>
+      <div class="card project-card reveal" data-project="caplora" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-thumb">
+          <div class="thumb-inner thumb-caplora">
+            <span class="code-line" style="width:72%"></span>
+            <span class="code-line" style="width:46%"></span>
+            <span class="code-line accent" style="width:58%"></span>
+            <span class="code-line" style="width:36%"></span>
+            <span class="thumb-badge">&#10003;</span>
+          </div>
         </div>
-        <p class="body-copy">
-          A production-readiness platform for software built with AI coding tools. It catches the gap
-          between "it works" and "it's ready for users": exposed secrets, missing authentication,
-          unsafe database access, rate limits. I built the scanning engine, caplora-cli, using static
-          analysis rather than asking an LLM to guess, every finding backed by evidence. For issues it
-          can safely fix, it writes the patch, opens a pull request, and re-runs the check to confirm.
-        </p>
-        <div class="chip-row">
-          <span class="chip">TypeScript</span>
-          <span class="chip">Static analysis</span>
-          <span class="chip">Next.js</span>
-          <span class="chip">GitHub API</span>
-        </div>
-      </div>
-
-      <div class="card project-card reveal">
-        <div class="project-head">
-          <span class="accent-text project-num">_02.</span>
-          <h3>Хичээл+</h3>
-        </div>
-        <p class="body-copy">
-          A classroom management mini-app integrated into MongolNet, a Mongolian super-app modeled on
-          WeChat. Teachers post homework into class group chats, students submit work without leaving
-          the conversation, and parents get automatic updates. Built platform-agnostic from day one
-          with a mapping-table pattern, full Expo/React Native and Fastify/Drizzle/PostgreSQL stack,
-          Redis for jobs, and a CI/CD pipeline running 29 unit and 11 end-to-end tests before every
-          deploy. Deployed on AWS, handling MongolNet's real authentication flow.
-        </p>
-        <div class="chip-row">
-          <span class="chip">React Native</span>
-          <span class="chip">Fastify</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Redis</span>
-          <span class="chip">AWS</span>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="accent-text project-num">_01.</span>
+            <h3>Caplora</h3>
+          </div>
+          <p class="project-teaser">A production-readiness scanner for AI-coded apps — it catches what "it works" misses before users do.</p>
+          <div class="chip-row">
+            <span class="chip">TypeScript</span>
+            <span class="chip">Static analysis</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">GitHub API</span>
+          </div>
+          <span class="project-more">View project <span aria-hidden="true">&rarr;</span></span>
+          <div class="full-desc" hidden>
+            <p>
+              A production-readiness platform for software built with AI coding tools. It catches the gap
+              between "it works" and "it's ready for users": exposed secrets, missing authentication,
+              unsafe database access, rate limits.
+            </p>
+            <p>
+              I built the scanning engine, caplora-cli, using static analysis rather than asking an LLM to
+              guess, every finding backed by evidence. For issues it can safely fix, it writes the patch,
+              opens a pull request, and re-runs the check to confirm it's actually resolved, not just
+              flagged. The web app connects to a GitHub repo, runs the scan, and gives a single readiness
+              call: blocked, ready with risks, or ready.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="card project-card reveal">
-        <div class="project-head">
-          <span class="accent-text project-num">_03.</span>
-          <h3>BooklyMN</h3>
+      <div class="card project-card reveal" data-project="khicheel" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-thumb">
+          <div class="thumb-inner thumb-khicheel">
+            <span class="bubble bubble-left"></span>
+            <span class="bubble bubble-right accent"></span>
+            <span class="bubble bubble-left small"></span>
+          </div>
         </div>
-        <p class="body-copy">
-          A full-stack booking platform for the Mongolian market. Barbershops, salons, spas, and
-          restaurants get their own booking page so customers can book around the clock. Covers a
-          real-time booking flow, an owner dashboard, a super admin panel, two-way Google Calendar
-          sync, a QR code and Instagram card generator, automated Twilio SMS reminders, and a fully
-          Mongolian UI. Runs as a managed SaaS, live at booklymn.org.
-        </p>
-        <div class="chip-row">
-          <span class="chip">Next.js</span>
-          <span class="chip">Supabase</span>
-          <span class="chip">Twilio</span>
-          <span class="chip">Google Calendar API</span>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="accent-text project-num">_02.</span>
+            <h3>Хичээл+</h3>
+          </div>
+          <p class="project-teaser">A classroom mini-app built straight into MongolNet's chat, so nothing needs a separate login.</p>
+          <div class="chip-row">
+            <span class="chip">React Native</span>
+            <span class="chip">Fastify</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Redis</span>
+            <span class="chip">AWS</span>
+          </div>
+          <span class="project-more">View project <span aria-hidden="true">&rarr;</span></span>
+          <div class="full-desc" hidden>
+            <p>
+              A classroom management mini-app integrated into MongolNet, a Mongolian super-app modeled on
+              WeChat. Teachers post homework into class group chats, students submit work without leaving
+              the conversation, and parents get automatic updates, all without a separate app or login.
+            </p>
+            <p>
+              I designed it to be platform-agnostic from day one, using a mapping-table pattern so the same
+              backend can plug into any messaging platform, not just MongolNet. I built the full stack: an
+              Expo/React Native frontend, a Fastify and Drizzle ORM backend on PostgreSQL, and Redis for
+              caching and background jobs, with a CI/CD pipeline running 29 unit tests and 11 end-to-end
+              tests before every deploy. It's deployed on AWS with Nginx, PM2, and SSL, and handles
+              MongolNet's real authentication flow, including session-based auth exchange, role mapping
+              between Mongolian terms and internal roles, and real-time updates over WebSocket.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card project-card reveal" data-project="booklymn" data-link="https://booklymn.org" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="project-thumb">
+          <div class="thumb-inner thumb-booklymn">
+            <div class="cal-grid">
+              <span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span>
+              <span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell accent"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span>
+              <span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span><span class="cal-cell"></span>
+            </div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="accent-text project-num">_03.</span>
+            <h3>BooklyMN</h3>
+          </div>
+          <p class="project-teaser">A 24/7 booking platform for Mongolian businesses, from first click to calendar sync.</p>
+          <div class="chip-row">
+            <span class="chip">Next.js</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">Twilio</span>
+            <span class="chip">Google Calendar API</span>
+          </div>
+          <span class="project-more">View project <span aria-hidden="true">&rarr;</span></span>
+          <div class="full-desc" hidden>
+            <p>
+              A full-stack booking platform I built for the Mongolian market. It gives appointment-based
+              businesses — barbershops, salons, spas, karaoke rooms, restaurants — their own custom online
+              booking page where customers can book 24/7 without calling or messaging.
+            </p>
+            <p>
+              It covers the full loop: a real-time customer booking flow, a business owner dashboard with a
+              weekly calendar, a super admin panel to manage every client business from one place, two-way
+              Google Calendar sync so bookings land on the owner's phone automatically, a QR code and
+              Instagram card generator per business, automated SMS reminders through Twilio, and a fully
+              Mongolian-language UI throughout. It runs as a managed SaaS, live at booklymn.org.
+            </p>
+          </div>
         </div>
       </div>
 
