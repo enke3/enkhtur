@@ -55,6 +55,15 @@
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <button id="modalClose" class="close-btn modal-close" aria-label="Close">&times;</button>
     <div id="modalThumb" class="modal-thumb" aria-hidden="true"></div>
+    <div id="modalGallery" class="modal-gallery" hidden>
+      <div class="gallery-main">
+        <img id="galleryImg" class="gallery-img" src="" alt="">
+        <button id="galleryPrev" class="gallery-nav gallery-prev" aria-label="Previous image">&#8592;</button>
+        <button id="galleryNext" class="gallery-nav gallery-next" aria-label="Next image">&#8594;</button>
+        <span id="galleryCount" class="gallery-count"></span>
+      </div>
+      <div id="galleryThumbs" class="gallery-thumbs"></div>
+    </div>
     <div class="modal-body">
       <h3 id="modalTitle"></h3>
       <div id="modalDesc" class="modal-desc"></div>
@@ -185,6 +194,13 @@
             <span class="chip">Static analysis</span>
             <span class="chip">Next.js</span>
             <span class="chip">GitHub API</span>
+          </div>
+          <div class="gallery" hidden>
+            <img src="images/caplora.jpg" alt="Caplora landing page with the launch decision card">
+            <img src="images/caplora-connect.jpg" alt="Connecting a GitHub repo to Caplora">
+            <img src="images/caplora-scanning.jpg" alt="Caplora running its security and reliability checks">
+            <img src="images/caplora-findings.jpg" alt="Caplora findings list with severity and confidence scores">
+            <img src="images/caplora-report.jpg" alt="Caplora launch decision report with blockers and top findings">
           </div>
           <span class="project-more">View project <span aria-hidden="true">&rarr;</span></span>
           <div class="full-desc" hidden>
