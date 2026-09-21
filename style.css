@@ -291,6 +291,20 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
 }
 .btn-hard:hover{ background:transparent; color:var(--accent); transform:translateY(-3px); }
 
+.btn-outline{
+  display:inline-block;
+  border:2px solid var(--line);
+  background:transparent;
+  color:var(--ink);
+  padding:15px 30px;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  transition:border-color .25s ease, color .25s ease, transform .25s ease;
+}
+.btn-outline:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-3px); }
+
 /* ---------- hero ---------- */
 .hero{
   position:relative;
