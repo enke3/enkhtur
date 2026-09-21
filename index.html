@@ -268,13 +268,17 @@
           <span class="project-more">View project <span aria-hidden="true">&rarr;</span></span>
           <div class="full-desc" hidden>
             <p>
-              A classroom management mini-app integrated into MongolNet, a Mongolian super-app modeled on
-              WeChat. Teachers post homework into class group chats, students submit work without leaving
-              the conversation, and parents get automatic updates, all without a separate app or login.
+              A classroom management mini-app API built to pull homework distribution out of Facebook
+              groups and Messenger chats, where it's currently scattered alongside unrelated and
+              unmoderated social content, and into a dedicated, safe channel inside the chat apps
+              families already use. Teachers post homework into class group chats, students submit
+              work without leaving the conversation, and parents get automatic updates, all without a
+              separate app or login.
             </p>
             <p>
-              I designed it to be platform-agnostic from day one, using a mapping-table pattern so the same
-              backend can plug into any messaging platform, not just MongolNet. I built the full stack: an
+              It's built as a mini-app API, not a MongolNet-specific product: a mapping-table pattern
+              lets the same backend plug into any chat platform's group-messaging interface, not just
+              MongolNet, so schools aren't locked into one super-app. I built the full stack: an
               Expo/React Native frontend, a Fastify and Drizzle ORM backend on PostgreSQL, and Redis for
               caching and background jobs, with a CI/CD pipeline running 29 unit tests and 11 end-to-end
               tests before every deploy. It's deployed on AWS with Nginx, PM2, and SSL, and handles
