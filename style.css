@@ -520,6 +520,8 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
   color:var(--accent);
   display:flex; align-items:center; justify-content:center;
   font-size:14px; font-weight:700;
+  background:#0E0E0E;
+  z-index:2;
 }
 
 /* Хичээл+ thumbnail: chat bubbles */
@@ -733,6 +735,10 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
   align-items:center;
   justify-content:center;
   transition:background .2s ease, color .2s ease;
+  /* above .gallery-img's stacking context, else the image (even its
+     transparent letterboxed edges) swallows the click and the button
+     renders underneath it */
+  z-index:2;
 }
 .gallery-nav:hover{ background:var(--accent); color:#0A0A0A; }
 .gallery-prev{ left:14px; }
@@ -747,6 +753,7 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
   letter-spacing:.03em;
   padding:5px 10px;
   border-radius:20px;
+  z-index:2;
 }
 
 .gallery-thumbs{
