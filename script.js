@@ -180,12 +180,7 @@
       galleryImg.src = photo.src;
       galleryImg.alt = photo.alt;
       galleryImg.classList.toggle("fit-contain", photo.fit === "contain");
-      if (photo.fit === "contain") {
-        galleryBackdrop.style.backgroundImage = "url('" + photo.src + "')";
-        galleryBackdrop.classList.add("show");
-      } else {
-        galleryBackdrop.classList.remove("show");
-      }
+      galleryBackdrop.style.backgroundImage = "url('" + photo.src + "')";
       galleryCount.textContent = (galleryIndex + 1) + " / " + galleryPhotos.length;
       galleryThumbs.querySelectorAll(".gallery-thumb").forEach(function (t, ti) {
         t.classList.toggle("active", ti === galleryIndex);
