@@ -21,6 +21,57 @@
     });
   }
 
+  /* ---------- hero terminal: code typing effect ---------- */
+  var typeCode = document.getElementById("typeCode");
+  if (typeCode) {
+    var codeSnippets = [
+      'const enkhtur = {\n  role: "Software & AI Engineer",\n  stack: ["TypeScript", "Python", "Postgres"],\n  focus: "build & ship",\n};',
+      'function ship(idea) {\n  return [design, build, deploy]\n    .reduce((v, step) => step(v), idea);\n}',
+      '// turning messy problems into\n// products that actually work'
+    ];
+
+    var reduceMotion =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) {
+      typeCode.textContent = codeSnippets[0];
+    } else {
+      var snippetIndex = 0;
+      var charIndex = 0;
+      var typing = true;
+      var typeSpeed = 26;
+      var deleteSpeed = 12;
+      var holdTime = 1600;
+      var gapTime = 500;
+
+      function tick() {
+        var current = codeSnippets[snippetIndex];
+        if (typing) {
+          charIndex++;
+          typeCode.textContent = current.slice(0, charIndex);
+          if (charIndex >= current.length) {
+            typing = false;
+            window.setTimeout(tick, holdTime);
+            return;
+          }
+          window.setTimeout(tick, typeSpeed);
+        } else {
+          charIndex--;
+          typeCode.textContent = current.slice(0, charIndex);
+          if (charIndex <= 0) {
+            typing = true;
+            snippetIndex = (snippetIndex + 1) % codeSnippets.length;
+            window.setTimeout(tick, gapTime);
+            return;
+          }
+          window.setTimeout(tick, deleteSpeed);
+        }
+      }
+
+      window.setTimeout(tick, 900);
+    }
+  }
+
   /* ---------- shooting stars ---------- */
   var shootingLayer = document.getElementById("shootingStars");
   if (shootingLayer) {
