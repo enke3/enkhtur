@@ -415,6 +415,13 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
   object-position:top;
   display:block;
 }
+/* for portrait/mobile screenshots: show the whole shot, letterboxed,
+   instead of cropping most of it away to cover a wide thumbnail box */
+.project-shot.fit-contain{
+  object-fit:contain;
+  object-position:center;
+  background:#0E0E0E;
+}
 
 .thumb-badge{
   position:absolute;
@@ -606,6 +613,10 @@ main, header, .menu-overlay{ position:relative; z-index:1; }
   object-fit:cover;
   object-position:top;
   display:block;
+}
+.gallery-img.fit-contain{
+  object-fit:contain;
+  object-position:center;
 }
 .gallery-nav{
   position:absolute;

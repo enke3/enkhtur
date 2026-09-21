@@ -178,6 +178,7 @@
       var photo = galleryPhotos[galleryIndex];
       galleryImg.src = photo.src;
       galleryImg.alt = photo.alt;
+      galleryImg.classList.toggle("fit-contain", photo.fit === "contain");
       galleryCount.textContent = (galleryIndex + 1) + " / " + galleryPhotos.length;
       galleryThumbs.querySelectorAll(".gallery-thumb").forEach(function (t, ti) {
         t.classList.toggle("active", ti === galleryIndex);
@@ -198,7 +199,11 @@
 
       galleryPhotos = galleryEl
         ? Array.prototype.map.call(galleryEl.querySelectorAll("img"), function (img) {
-            return { src: img.getAttribute("src"), alt: img.getAttribute("alt") || "" };
+            return {
+              src: img.getAttribute("src"),
+              alt: img.getAttribute("alt") || "",
+              fit: img.getAttribute("data-fit") || "cover"
+            };
           })
         : [];
 
