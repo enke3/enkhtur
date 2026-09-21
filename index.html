@@ -103,14 +103,19 @@
     <span class="eyebrow reveal">This is me</span>
     <h2 class="section-title reveal">Hi, I'm Enkhtur.</h2>
     <p class="body-copy reveal">
-      My background is business and finance. I studied it at NYU, then moved to Sydney and
-      taught myself my way into computing at the University of Sydney. I've run a digital agency,
-      started a non-profit connecting students to internships, and co-founded a fintech company.
+      My background started in business and finance. I studied it at NYU, then moved to Sydney
+      and taught myself to code before studying computing at the University of Sydney.
     </p>
     <p class="body-copy reveal">
-      What I keep coming back to is the part where a business idea turns into something real people
-      can use. I like being the person who can do both halves of that: figure out why it should
-      exist, and build it.
+      Since then, I've built and shipped software across fintech, consumer products, and internal
+      tools. I've co-founded a fintech company, worked across the full product lifecycle, and spent
+      a lot of time turning ambiguous ideas into actual systems, from the interface people use to
+      the backend services, APIs, data models, and infrastructure underneath them.
+    </p>
+    <p class="body-copy reveal">
+      What I keep coming back to is the point where a problem stops being an idea and becomes
+      working software. I like understanding the product, designing the system, writing the code,
+      and taking responsibility for getting it into people's hands.
     </p>
   </section>
 
@@ -391,32 +396,20 @@
           <span class="project-more">View project <span aria-hidden="true">&rarr;</span></span>
           <div class="full-desc" hidden>
             <p>
-              A family memory platform I built to solve a problem I've had since I was a kid: I was always
-              curious about my grandparents and great grandparents, and the answers I got were vague at best.
-              Most family history just lives in a few people's heads and disappears when they do.
+              A family memory platform I built to solve a problem I've had since I was a kid: family
+              history mostly lives in a few people's heads and disappears when they do. Family members
+              add memories in whatever format is easiest, photos, voice recordings that transcribe
+              themselves, written stories, or documents, into one shared, private archive.
             </p>
             <p>
-              Family members create a shared, private space and add memories in whatever format is easiest,
-              photos with captions, voice recordings that transcribe themselves automatically, written
-              stories, or documents. Everything lands in one living archive tagged with who contributed it
-              and when. The core feature is a chat interface built on retrieval augmented generation: you ask
-              the archive a question in plain language, like what someone's first job was, and it searches
-              the family's actual stored memories, answers using only what it finds, and cites the specific
-              memory behind every claim. It's retrieval over what people really said, never a simulation of
-              anyone.
-            </p>
-            <p>
-              The part I'm proudest of is the gap detection system. Most personal archive projects die within
-              a week because they depend on someone remembering to contribute, so this one doesn't wait. It
-              actively scans what's already been recorded, notices what's missing, whether that's a person
-              with almost no memories or a whole decade with nothing documented, and generates a specific
-              question for the right family member to answer. Every member shows up automatically on a visual
-              family tree, and every memory is plotted on an interactive timeline so you can see at a glance
-              where the archive is well covered and where it isn't. Built on Next.js and TypeScript, with
-              Supabase handling the database, file storage, and auth, and pgvector doing the vector search
-              that powers retrieval. OpenAI handles the grounded answers, voice transcription through Whisper,
-              and the embeddings, and every family's data is isolated at the database level with row level
-              security, so families genuinely cannot see each other's memories.
+              The core feature is a retrieval augmented chat interface: ask the archive a question in
+              plain language and it answers using only the family's own stored memories, citing the
+              specific one behind every claim. The part I'm proudest of is gap detection, which actively
+              scans what's been recorded, spots what's missing, and prompts the right family member to
+              fill it in, backed by an automatic family tree and an interactive timeline. Built on
+              Next.js and TypeScript, with Supabase for the database, storage, and auth, pgvector for
+              retrieval, and OpenAI for the grounded answers, transcription, and embeddings. Every
+              family's data is isolated with row level security.
             </p>
           </div>
         </div>
